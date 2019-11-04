@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d20fa49"],{b500:function(t,e,n){"use strict";n.r(e);var a=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"revenue"},[n("van-nav-bar",{attrs:{title:"我的收入","left-text":"返回","left-arrow":""},on:{"click-left":t.onClickLeft}})],1)},c=[],r={data:function(){return{}},methods:{onClickLeft:function(){this.$router.go(-1)}}},o=r,i=n("2877"),l=Object(i["a"])(o,a,c,!1,null,"9acd1870",null);e["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d20fa49.02bd464a.js.map
