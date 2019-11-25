@@ -20,8 +20,10 @@
        <van-cell-group>
             <van-cell title="我的收入" border value="" is-link icon="debit-pay" @click.prevent="revenue"/>
             <van-cell title="我的订单"  border value="" is-link  icon="orders-o" @click.prevent="myOrder"/>
-            <van-button  type="primary" size="large" @click.prevent="loginouthandler" >退出</van-button>
        </van-cell-group>
+       <div class="btn">
+            <van-button  type="primary" size="large" round @click.prevent="loginouthandler" >退出</van-button>
+       </div>
     </div>
 </template>
 <script>
@@ -77,5 +79,8 @@ export default {
         margin-top:10px;
         font-size:12px;
         text-align: left;
+    }
+    .btn{
+        padding: 1em;
     }
 </style>

@@ -6,6 +6,7 @@ export default{
         time:'',
         info:{},
         token:getToken(),
+        allorder1:[],
         allorder:[],
         djdorder:[],
         dfworder:[],
@@ -22,7 +23,10 @@ export default{
         // 把数据分状态分类，并刷新数据
         refreshorder(state,response){
             // 过滤出与登录服务员相关的所有订单
-            state.allorder =  response.data;
+            state.allorder1 =  response.data;
+            // 遍历地址为空的数据
+            state.allorder = state.allorder1.filter(item => item.address != null);
+            // console.log(state.allorder);
             // 待接单
             state.djdorder = state.allorder.filter(item => item.status == "待接单");
             // 待服务
@@ -40,12 +44,6 @@ export default{
             // 将用户信息存储到状态机
             commit("refreshinfo",response.data);
         },
-        // // 通过分页查询订单获取某个员工的所有订单数据
-        // async orderfindall({commit,rootState}){
-        //     // let response = await get("/order/query?waiterId=");
-        //     let response = await get("/order/query",{waiterId:rootState.login.info.id});
-        //     commit("refreshorder",response)
-        // }
         // 通过分页查询订单获取某个员工的所有订单数据
         async orderfindall({commit,rootState},info){
             // let response = await get("/order/query?waiterId=");

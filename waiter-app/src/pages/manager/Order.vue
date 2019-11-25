@@ -175,7 +175,7 @@ export default {
     },
     computed:{
         ...mapState("order",["allorder","djdorder","dfworder","dqrorder","ywcorder"]),
-        ...mapState("order",['info','token'])
+        ...mapState("login",['info','token'])
     },
     methods:{
         ...mapActions("order",["infoHandler","orderfindall","serviceCompleteOrder"]), 
@@ -205,13 +205,16 @@ export default {
         line-height: 2em;
         border-bottom:1px solid #ededed;
     }
+    ul{
+        padding:0 0.5em;
+    }
     ul.order{
         margin-bottom: 50px;
     }
     ul.order li{
         border:1px solid #ededed;
-        border-radius: 1em 1em 0 0;
-        margin-bottom: .5em;
+        border-radius: 1em;
+        margin-bottom: 1em;
         background-color: aliceblue;
     }
     .order_header{

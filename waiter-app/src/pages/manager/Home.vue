@@ -60,7 +60,7 @@ export default {
     },
     computed:{
         ...mapState("order",["djdorder"]),
-        ...mapState("order",['info','token'])
+        ...mapState("login",['info','token'])
     },
     methods:{
         ...mapActions("order",["infoHandler","orderfindall"]),
@@ -81,8 +81,10 @@ export default {
         }
     },
     created(){
+        
          this.infoHandler(this.token)
         .then(()=>{
+           console.log(this.info)
              // 查询所有订单
             this.orderfindall(this.info);
         })
@@ -93,10 +95,13 @@ export default {
     ul.order{
         margin-bottom: 50px;
     }
+    ul{
+        padding:0 0.5em;
+    }
     ul.order li{
         border:1px solid #ededed;
-        border-radius: 1em 1em 0 0;
-        margin-top: .5em;
+        border-radius: 1em 0 1em 0;
+        margin-top: 1em;
         /* background-color: aliceblue; */
     }
     .order_header{
@@ -126,6 +131,6 @@ export default {
     .order_footer{
         /* background-color: #ededed; */
         padding:.5em;
-        padding-left:13em;
+        padding-left:11em;
     }
 </style>

@@ -25,7 +25,7 @@ export default {
     },
     methods:{
         tabChangeHandler(path){
-            this.$router.push({path});
+            this.$router.push({path:path,query:this.token});
         },
         ...mapActions('login',["infoHandler"])
     },

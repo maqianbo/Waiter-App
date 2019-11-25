@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'login',
-    component: () => import( '../pages/Login.vue')
+    component: () => import( '../pages/Login.vue'),
   },
   {
     path: '/manager',
@@ -34,6 +34,16 @@ const routes = [
     path: '/myorder',
     name: 'myorder',
     component: () => import( '../pages/manager/Myorder.vue')
+  },
+  {
+    path:'/register',
+    name:'register',
+    component:() => import('../pages/manager/Register.vue')
+  },
+  {
+    path:'/retrievePassword',
+    name:'retrievePassword',
+    component:() => import('../pages/manager/RetrievePassword.vue')
   }
 ]
 
